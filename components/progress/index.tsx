@@ -2,7 +2,15 @@ import { User } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 
-export const Progress = () => {
+interface UserProp {
+    user?: {
+        name?: string | null;
+        email?: string | null;
+        image?: string | null;
+    };
+}
+
+export const Progress = ({ user }: UserProp) => {
     return (
         <Card className="flex-1">
             <CardHeader >
@@ -16,13 +24,13 @@ export const Progress = () => {
             <CardContent>
                 <article className="flex items-center gap-2 border-b py-2">
                     <Avatar>
-                        <AvatarImage src="https://github.com/delanoquirino.png" />
+                        <AvatarImage src={user?.image || ''} />
                         <AvatarFallback>
                             <User />
                         </AvatarFallback>
                     </Avatar>
                     <div>
-                        <p className="text-sm sm:text-base">Delano Quirino</p>
+                        <p className="text-sm sm:text-base">{user?.name}</p>
 
                     </div>
 

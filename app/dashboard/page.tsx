@@ -3,16 +3,18 @@ import { Progress } from "@/components/progress";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dumbbell, Info, User, Utensils } from "lucide-react";
 import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
+//import { redirect } from "next/navigation";
 
 export default async function DashboardPage() {
 
   const session = await getServerSession();
 
-  if (!session) {
-    redirect('/')
-  }
+  // if (!session) {
+  //   redirect('/')
+  // }
 
+  const user = session?.user;
+  console.log(user);
 
   return (
     <main className="sm:ml-14 p-4">
@@ -106,7 +108,7 @@ export default async function DashboardPage() {
         {/* Progresso */}
 
         <ChartEvolution />
-        <Progress />
+        <Progress user={user} />
 
       </section>
 
