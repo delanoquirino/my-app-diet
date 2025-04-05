@@ -13,22 +13,22 @@ export default function PricingCard() {
     return (
         <Card className="w-[350px] text-left md:mt-20 mt-10">
             <CardHeader>
-                <CardTitle>Plano Pro Premium VIP</CardTitle>
+                <CardTitle>Plano VIP</CardTitle>
                 <CardDescription>
-                    Tudo que você precisa para seus estudos
+                    Tudo que você precisa para seu plano de treino e dieta
                 </CardDescription>
             </CardHeader>
             <CardContent>
                 <p className="text-4xl font-bold mb-8 mt-4">
-                    R$29
+                    R$50
                     <span className="font-normal text-muted-foreground text-lg">
                         /mês
-                    </span>{' '}
+                    </span>
                 </p>
                 <ul>
                     <li className="flex gap-2 text-muted-foreground">
                         <Check className="w-4 text-green-600" />
-                        Acesso a 1 plano de treino e dieta por mês
+                        Acesso seu plano de treino e dieta
                     </li>
                     <li className="flex gap-2 text-muted-foreground">
                         <Check className="w-4 text-green-600" />
@@ -42,10 +42,14 @@ export default function PricingCard() {
                         <Check className="w-4 text-green-600" />
                         Cancele quando quiser
                     </li>
+                    <li className="flex gap-2 text-muted-foreground">
+                        <Check className="w-4 text-green-600" />
+                        Dúvidas via WhatsApp
+                    </li>
                 </ul>
             </CardContent>
             <CardFooter>
-                <Button className="w-full">Assine Agora</Button>
+                <Button className="w-full cursor-pointer">Assine Agora</Button>
             </CardFooter>
         </Card>
     );

@@ -1,8 +1,12 @@
+'use client'
+
 import { ChartLine, Dumbbell, Home, LogOut, Package, PanelBottom, Settings, Utensils } from "lucide-react"
+import { signOut } from "next-auth/react"
 import Link from "next/link"
 import { Button } from "../ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip"
+
 export const Sidebar = () => {
     return (
         <div className="flex w-full flex-col bg-muted/40">
@@ -126,7 +130,7 @@ export const Sidebar = () => {
                     </TooltipProvider>
 
                 </nav>
-                <nav className="mt-auto flex flex-col items-center gap-5 px-2 py-5">
+                <nav className="mt-auto flex flex-col items-center gap-5 px-2 py-5" onClick={() => signOut()}>
                     <TooltipProvider>
                         <Tooltip>
                             <TooltipTrigger asChild>

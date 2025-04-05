@@ -2,8 +2,18 @@ import { ChartEvolution } from "@/components/chartEvolution";
 import { Progress } from "@/components/progress";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dumbbell, Info, User, Utensils } from "lucide-react";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
+
+  const session = await getServerSession();
+
+  if (!session) {
+    redirect('/')
+  }
+
+
   return (
     <main className="sm:ml-14 p-4">
       <section className="grid grid-cols-2 lg:grid-cols-4 gap-4">
